@@ -6,6 +6,21 @@ const Voter = require('./schema');
 
 connect(); // To the database
 
+
+// File configuration
+const file = readline.createInterface({
+  input: fs.createReadStream("voters.csv")
+});
+
+// Asynchronous line-by-line input
+file.on('line', function(line) {
+  console.log(line);
+});
+
+// End the program when the file closes
+file.on('close', function() {
+  process.exit(0);
+});
 // // Create some faculty
 // const harcourt = new Professor({
 //   name: 'Ed Harcourt',
