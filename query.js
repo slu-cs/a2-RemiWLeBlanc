@@ -33,4 +33,4 @@ queries[0].exec(function(error, professors) {
   // const names = professors.map(p => p.name);
   // console.log('Names in order: ', names);
 });
-console.log('Number of registered voters in Canton: ', names);
+console.log('Number of registered voters in Canton: ', count);
