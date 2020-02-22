@@ -15,8 +15,13 @@ const file = readline.createInterface({
 
 // Asynchronous line-by-line input
 file.on('line', function(line) {
-  
-  const voter = new Voter(line);
+  var values= line.split(',');
+  const voter = new Voter({
+    firstname: values[0],
+    lastname: values[1],
+    zipcode: values[2],
+    history: values[3]
+  });
 
   // reset the data
   mongoose.connection.dropDatabase()
