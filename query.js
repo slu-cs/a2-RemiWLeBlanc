@@ -23,7 +23,7 @@ const queries = [
 Promise.all(queries)
   .then(function(results) {
     console.log('Number of registered voters in Canton: ', results[0].length);
-    console.log('Full names of those whose name is STARR: ', results[1].map(p => p.firstname, p => p.lastname));
+    console.log('Full names of those whose name is STARR: ', results[1].map(p => p.firstname, p.lastname));
     // console.log('Number of people who voted in 2016 general election: ', results[2].length);
     // console.log('Names in order: ', results[0].map(p => p.name));
     // console.log('Started most recently: ', results[1].map(p => p.name));
