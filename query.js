@@ -17,11 +17,13 @@ const queries = [
 
   // Voters from Canton
   Voter.find().where('zipcode').equals(13617),
+  Voter.find().where('firstname').equals('STARR')
 ];
 
 Promise.all(queries)
   .then(function(results) {
     console.log('Number of registered voters in Canton: ', results[0].length);
+    console.log('Full names of those whose name is STARR: ', results[1])
     // console.log('Names in order: ', results[0].map(p => p.name));
     // console.log('Started most recently: ', results[1].map(p => p.name));
     // console.log('Started in 2003: ', results[2].map(p => p.name));
