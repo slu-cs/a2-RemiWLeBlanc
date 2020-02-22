@@ -19,18 +19,24 @@ const queries = [
   Voter.find().where('zipcode').equals(13617),
 ];
 
-// Promise.all(queries)
-//   .then(function(results){
-//     console.
-//   });
+Promise.all(queries)
+  .then(function(results) {
+    console.log('Number of registered voters in Canton: ', results[0].count());
+    // console.log('Names in order: ', results[0].map(p => p.name));
+    // console.log('Started most recently: ', results[1].map(p => p.name));
+    // console.log('Started in 2003: ', results[2].map(p => p.name));
+    // console.log('Teaches 362: ', results[3].map(p => p.name));
+    // console.log('Distinct ranks: ', results[4]);
+    mongoose.connection.close();
+  }).catch(error => console.error(error.stack));
 
-// Professor.find().sort('name')
-let count = 0;
-queries[0].exec(function(error, professors) {
-  if (error) console.error(error.stack);
-
-  count++;
-  // const names = professors.map(p => p.name);
-  // console.log('Names in order: ', names);
-});
-console.log('Number of registered voters in Canton: ', count);
+// // Professor.find().sort('name')
+// let count = 0;
+// queries[0].exec(function(error, professors) {
+//   if (error) console.error(error.stack);
+//
+//   count++;
+//   // const names = professors.map(p => p.name);
+//   // console.log('Names in order: ', names);
+// });
+// console.log('Number of registered voters in Canton: ', count);
