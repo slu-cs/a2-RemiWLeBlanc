@@ -18,7 +18,7 @@ file.on('line', function(line) {
   var values= line.split(',');
   var str = values[3];
   var elections = [];
-  if(str !== null){
+  if(str !== undefined){
     for (var i = 0; i < str.length; i=i+4) {
       elections.push(str.substring(i, i+4));
     }
