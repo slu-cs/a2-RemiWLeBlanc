@@ -21,7 +21,7 @@ const queries = [
 
 Promise.all(queries)
   .then(function(results) {
-    console.log('Number of registered voters in Canton: ', results[0].length);
+    console.log('Number of registered voters in Canton: ', results[0]);
     // console.log('Names in order: ', results[0].map(p => p.name));
     // console.log('Started most recently: ', results[1].map(p => p.name));
     // console.log('Started in 2003: ', results[2].map(p => p.name));
