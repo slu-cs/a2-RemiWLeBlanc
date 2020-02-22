@@ -15,7 +15,7 @@ const file = readline.createInterface({
 
 // Asynchronous line-by-line input
 file.on('line', function(line) {
-  console.log(line);
+  
   const voter = new Voter(line);
 
   // reset the data
