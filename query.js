@@ -36,7 +36,7 @@ Promise.all(queries)
     console.log('Full names of those whose name is STARR: ', results[1].map(p => p.firstname).toString(), results[1].map(p => p.lastname).toString());
     console.log('Number of people who voted in 2016 general election: ', results[2].length);
     console.log('The last name alphabetically: ', results[3].map(p => p.lastname).toString());
-    console.log('Number of zipcodes in the county: ', results[4].length;
+    console.log('Number of zipcodes in the county: ', results[4].length);
     // console.log('Started in 2003: ', results[2].map(p => p.name));
     // console.log('Teaches 362: ', results[3].map(p => p.name));
     // console.log('Distinct ranks: ', results[4]);
