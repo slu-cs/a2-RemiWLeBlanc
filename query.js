@@ -19,10 +19,10 @@ const queries = [
   Voter.find().where('zipcode').equals(13617),
 ];
 
-Promise.all(queries)
-  .then(function(results){
-    console.
-  });
+// Promise.all(queries)
+//   .then(function(results){
+//     console.
+//   });
 
 // Professor.find().sort('name')
 let count = 0;
