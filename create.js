@@ -16,9 +16,11 @@ const file = readline.createInterface({
 // Asynchronous line-by-line input
 file.on('line', function(line) {
   var values= line.split(',');
+
+  // put the election history into an array
   var str = values[3];
   var elections = [];
-  if(str !== undefined){
+  if(str !== undefined){ // if they ever voted
     for (var i = 0; i < str.length; i=i+4) {
       elections.push(str.substring(i, i+4));
     }
