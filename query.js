@@ -17,7 +17,7 @@ const queries = [
   // Voters from Canton
   Voter.find().where('zipcode').equals(13617),
   Voter.find().where('firstname').equals('STARR'),
-  Voter.find().where('history').in(GE16)
+  Voter.find().where('history').in("GE16")
 ];
 
 Promise.all(queries)
