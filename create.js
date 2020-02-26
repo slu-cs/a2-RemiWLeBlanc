@@ -13,6 +13,8 @@ const file = readline.createInterface({
   input: fs.createReadStream("voters.csv")
 });
 
+const voters = [];
+
 // Asynchronous line-by-line input
 file.on('line', function(line) {
   var values= line.split(',');
@@ -32,14 +34,14 @@ file.on('line', function(line) {
     history: elections
   });
 
-  // reset the data
-  mongoose.connection.dropDatabase()
-    .then(() => voter.save())
-    .then(() => mongoose.connection.close())
-    .catch(error => console.error(error.stack));
+  voters.push(voter);
 })
 
 // End the program when the file closes
 file.on('close', function() {
-  process.exit(0);
+ // reset the data
+  mongoose.connection.dropDatabase()
+    .then(() => Promise.all(voters.map(voter => voter.save())))
+    .then(() => mongoose.connection.close())
+    .catch(error => console.error(error.stack));
 });
